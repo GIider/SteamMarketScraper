@@ -23,4 +23,4 @@ def get_total_amount_of_results(soup):
     elif len(spans) > 1:
         raise AssertionError('%d searchResults_total <spans> found' % len(spans))
 
-    return int(spans[0].text)
+    return int(spans[0].text.replace(',', ''))
