@@ -1,23 +1,19 @@
 # -*- coding: utf-8 -*-
 """Scrape the Steam Community market"""
 from urllib.request import urlopen
+from urllib.parse import quote
 
 __all__ = ['get_url', 'get_content']
 
 STEAM_MARKET_LISTINGS_URL = 'http://steamcommunity.com/market/listings/'
 
 
-# I'm sure this exists somewhere in urllib
-def sanitize_name_for_web(item_name):
-    return item_name.replace(' ', '%20')
-
-
 def get_url(game, item, filter_criteria=None):
     """Get the url for a Steam Community Market query"""
-    url = STEAM_MARKET_LISTINGS_URL + str(game) + '/' + sanitize_name_for_web(item)
+    url = STEAM_MARKET_LISTINGS_URL + str(game) + '/' + quote(item)
 
     if filter_criteria is not None:
-        url += '?filter=%s' % sanitize_name_for_web(filter_criteria)
+        url += '?filter=%s' % quote(filter_criteria)
 
     return url
 
