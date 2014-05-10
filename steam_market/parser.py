@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Parse the HTML in the Steam Community market"""
 from bs4 import BeautifulSoup
 
 

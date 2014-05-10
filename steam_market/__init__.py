@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
-"""Steam Community Market notifications"""
+"""Steam Community Market Scraper"""
 import enum
 
 from .parser import *
 from .scraper import *
 
 __all__ = ['get_amount_of_market_listings']
+
 
 class Games(enum.IntEnum):
     TF2 = 440
