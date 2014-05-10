@@ -1,5 +1,15 @@
 # -*- coding: utf-8 -*-
-"""Steam Community Market Scraper"""
+"""Steam Community Market Scraper
+
+Example usage:
+    >>> import steam_market
+    >>> game = 440
+    >>> item = 'Professional Killstreak Phlogistinator Kit'
+    >>> filter_criteria = 'Deadly Daffodil'
+    >>> listings = steam_market.get_amount_of_market_listings(game=game, item=item, filter_criteria=filter_crtieria)
+    >>> print(listings)
+    5
+"""
 import enum
 
 from .parser import *
