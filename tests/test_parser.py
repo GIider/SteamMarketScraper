@@ -39,17 +39,17 @@ class TestParser(unittest.TestCase):
         self.assertEqual(164720, listings)
 
     def test_lowest_price(self):
-        """Verify that we correctly find the lowest price"""
+        """Verify that we return the lowest price of multiple listings"""
         listings = steam_market.get_lowest_price(soup=get_soup_from_path(TEST_FILE_NORMAL_LISTING))
         self.assertEqual('11,59€', listings)
 
     def test_lowest_price_no_listings(self):
-        """Verify that we return None when there are no results"""
+        """Verify that we return None when there are no listings"""
         listings = steam_market.get_lowest_price(soup=get_soup_from_path(TEST_FILE_NO_RESULTS))
         self.assertIsNone(listings)
 
     def test_lowest_price_many_listings(self):
-        """Verify that we return None when there are no results"""
+        """Verify that we return the lowest price even with many listings"""
         listings = steam_market.get_lowest_price(soup=get_soup_from_path(TEST_FILE_MANY_RESULTS))
         self.assertEqual('0,03€', listings)
 

@@ -10,12 +10,13 @@ Disclaimer
 No warranty, express or implied. This module is not officially endorsed or certified by Valve Corporation
 
 ### Things you can do with this package
-* Search for items and apply filters like on the community market
-* Get the amount of listings for a specific item
-* Get the lowest price for the listing in the currency of the person that listed it
+* Get the amount of listings for a  item
+* Get the lowest price of an item in the currency of the person that listed it
+* Apply filters for items like on the market
 
 ### Things you can't do with this package (yet)
-* No features planned currently :-)
+* Get the highest price for a given item
+* Search the market
 
 ### Things you will never be able to do with this package
 * Buy stuff or sell stuff on the market - I have no intention of automating the process
