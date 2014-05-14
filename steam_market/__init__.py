@@ -19,8 +19,8 @@ from .scraper import *
 __all__ = ['MarketPage', 'Games']
 
 
-
 class MarketPage(object):
+    """A representation of a Steam Community market page"""
     def __init__(self, game, item, filter_criteria=None):
         self.game = game
         self.item = item
@@ -31,8 +31,10 @@ class MarketPage(object):
 
     @property
     def amount_of_listings(self):
+        """Get the amount of listings on this page"""
         return get_total_amount_of_listings(soup=self.soup)
 
     @property
     def lowest_price(self):
+        """Get the lowest price on this page"""
         return get_lowest_price(soup=self.soup)

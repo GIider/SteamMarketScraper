@@ -7,6 +7,6 @@ setup(name='steam_market',
       author='Marcel Carl',
       author_email='mail@marcelcarl.de',
       url='https://github.com/GIider/SteamMarketScraper',
-      version='0.2a',
+      version='0.3a',
       py_modules=['steam_market'],
       test_suite='tests')
