@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
 """Scrape the Steam Community market"""
-from urllib.request import urlopen
+from urllib.request import urlopen, Request
 from urllib.parse import quote
 
-__all__ = ['get_url', 'get_content']
+from bs4 import BeautifulSoup
+
+__all__ = ['get_url', 'get_soup']
 
 STEAM_MARKET_LISTINGS_URL = 'http://steamcommunity.com/market/listings/'
+USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1944.0 Safari/537.36'
 
 
 def get_url(game, item, filter_criteria=None):
@@ -18,9 +21,11 @@ def get_url(game, item, filter_criteria=None):
     return url
 
 
-def get_content(url):
-    """Read the html from a url"""
-    with urlopen(url) as f:
+def get_soup(url):
+    """Read the html from a url and return a soup object"""
+    request = Request(url, headers={'User-Agent': USER_AGENT})
+
+    with urlopen(request) as f:
         content = f.read()
 
-    return content
+    return BeautifulSoup(content)
