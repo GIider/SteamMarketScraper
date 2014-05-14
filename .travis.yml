@@ -1,7 +1,5 @@
 language: python
 python:
   - "3.4"
-# command to install dependencies
-install: pip install -r REQUIREMENTS --use-mirrors
-# command to run tests
+install: pip install -r REQUIREMENTS
 script: nosetests

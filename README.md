@@ -2,6 +2,8 @@
 Unofficial Steam Community Market scraper
 =========================================
 
+[![Build Status](https://travis-ci.org/GIider/SteamMarketScraper.svg?branch=master)](https://travis-ci.org/GIider/SteamMarketScraper)
+
 Disclaimer
 ==========
 No warranty, express or implied. This module is not officially endorsed or certified by Valve Corporation
