@@ -3,7 +3,7 @@
 
 Example usage:
     >>> import steam_market
-    >>> game = 440
+    >>> game = steam_market.Games.TF2
     >>> item = 'Professional Killstreak Phlogistinator Kit'
     >>> filter_criteria = 'Deadly Daffodil'
     >>> page = steam_market.MarketPage(game=game, item=item, filter_criteria=filter_criteria)
@@ -12,16 +12,12 @@ Example usage:
     >>> print(page.lowest_price)
     R$ 35,20
 """
-import enum
-
+from .constants import *
 from .parser import *
 from .scraper import *
 
-__all__ = ['get_amount_of_market_listings']
+__all__ = ['MarketPage', 'Games']
 
-
-class Games(enum.IntEnum):
-    TF2 = 440
 
 
 class MarketPage(object):

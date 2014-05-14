@@ -5,14 +5,21 @@ from urllib.parse import quote
 
 from bs4 import BeautifulSoup
 
+from .constants import Games
+
+
 __all__ = ['get_url', 'get_soup']
 
 STEAM_MARKET_LISTINGS_URL = 'http://steamcommunity.com/market/listings/'
-USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1944.0 Safari/537.36'
+USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) ' \
+             'Chrome/36.0.1944.0 Safari/537.36'
 
 
 def get_url(game, item, filter_criteria=None):
     """Get the url for a Steam Community Market query"""
+    if isinstance(game, Games):
+        game = game.value
+
     url = STEAM_MARKET_LISTINGS_URL + str(game) + '/' + quote(item)
 
     if filter_criteria is not None:
