@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import sys
 import bs4
 import unittest
 import os
@@ -38,7 +39,12 @@ class TestScraper(unittest.TestCase):
 
     def test_get_soup(self):
         """Test that we get a soup from a url"""
-        url = r'file:\\' + TEST_FILE_PATH
+        if sys.platform == 'win32':
+            url = r'file:\\'
+        else:
+            url = ''
+
+        url += TEST_FILE_PATH
         soup = steam_market.get_soup(url=url)
 
         self.assertIsInstance(soup, bs4.BeautifulSoup)
