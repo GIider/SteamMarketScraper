@@ -4,6 +4,7 @@ Unofficial Steam Community Market scraper
 
 [![Build Status](https://travis-ci.org/GIider/SteamMarketScraper.svg?branch=master)](https://travis-ci.org/GIider/SteamMarketScraper)
 [![Coverage Status](https://img.shields.io/coveralls/GIider/SteamMarketScraper.svg)](https://coveralls.io/r/GIider/SteamMarketScraper?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/GIider/SteamMarketScraper/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/GIider/SteamMarketScraper/?branch=master)
 
 Disclaimer
 ==========
