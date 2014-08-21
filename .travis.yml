@@ -3,7 +3,7 @@ python:
   - "3.4"
 install:
   - pip install -r REQUIREMENTS
-  - coveralls
+  - pip install coveralls
 script:
     nosetests --with-coverage --cover-package=steam_market
 after_success:
