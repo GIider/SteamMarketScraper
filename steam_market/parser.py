@@ -11,7 +11,7 @@ def get_total_amount_of_listings(soup):
     if len(spans) == 0:
         return 0
 
-    elif len(spans) > 1:
+    elif len(spans) > 1:  # pragma: no cover
         raise AssertionError('%d searchResults_total <spans> found' % len(spans))
 
     return int(spans[0].text.replace(',', ''))

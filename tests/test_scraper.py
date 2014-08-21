@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
+import bs4
 import unittest
+import os
 
 import steam_market
+
+TEST_FILE_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'html', 'test_normal_listing.html')
 
 
 class TestScraper(unittest.TestCase):
@@ -22,3 +26,19 @@ class TestScraper(unittest.TestCase):
 
         url = steam_market.get_url(game=game, item=item)
         self.assertEqual('http://steamcommunity.com/market/listings/440/', url)
+
+    def test_filter(self):
+        """Test that we correctly add filters"""
+        game = 440
+        item = 'Professional Killstreak Phlogistinator Kit'
+        filter_criteria = 'Deadly Daffodil'
+
+        url = steam_market.get_url(game=game, item=item, filter_criteria=filter_criteria)
+        self.assertEqual('http://steamcommunity.com/market/listings/440/Professional%20Killstreak%20Phlogistinator%20Kit?filter=Deadly%20Daffodil', url)
+
+    def test_get_soup(self):
+        """Test that we get a soup from a url"""
+        url = r'file:\\' + TEST_FILE_PATH
+        soup = steam_market.get_soup(url=url)
+
+        self.assertIsInstance(soup, bs4.BeautifulSoup)
