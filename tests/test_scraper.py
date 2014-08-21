@@ -42,7 +42,7 @@ class TestScraper(unittest.TestCase):
         if sys.platform == 'win32':
             url = r'file:\\'
         else:
-            url = ''
+            url = 'file://'
 
         url += TEST_FILE_PATH
         soup = steam_market.get_soup(url=url)
